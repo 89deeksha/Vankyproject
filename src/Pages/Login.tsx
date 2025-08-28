@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import loginimg from "../Images/Loginbg.png";
 import { FaRegUserCircle } from "react-icons/fa";
 import { RiLock2Fill } from "react-icons/ri";
 import { IoWarningOutline } from "react-icons/io5";
 import logo from "../Images/logo.png";
+import { useNavigate } from "react-router-dom";
+
 
 const Login: React.FC = () => {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
+
 
   const handleLogin = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -21,6 +25,7 @@ const Login: React.FC = () => {
     // Example dummy validation (replace with API call later)
     if (user === "Sm365941" && password === "123456") {
       alert("Login successful!");
+      navigate("/home");
       setError("");
     } else {
       setError("Invalid credentials. Please try again.");
