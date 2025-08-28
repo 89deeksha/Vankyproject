@@ -23,7 +23,7 @@ const Login: React.FC = () => {
     }
 
     // Example dummy validation (replace with API call later)
-    if (user === "Sm365941" && password === "123456") {
+    if (user === "dee8923" && password === "123456") {
       alert("Login successful!");
       navigate("/home");
       setError("");
